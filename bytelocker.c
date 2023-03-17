@@ -142,6 +142,9 @@ void list_current_directory(void) {
 //              SUBSET 1                    //
 //                                          //
 //////////////////////////////////////////////
+// To test the four pre-requisite conditions that must be met before 
+// we can begin encrypting files. 
+// In some cases, your program may need to print an error message 
 bool test_can_encrypt(char filename[MAX_PATH_LEN]) {
 
     // first pre-requisite
@@ -225,6 +228,9 @@ bool test_can_encrypt(char filename[MAX_PATH_LEN]) {
     return true;    
 }
 
+// XORs each byte of the given file with 0xFF, 
+// and outputs the resulting bytes to a new file, 
+// with the .xor extension appended to the original file name.
 void simple_xor_encryption(char filename[MAX_PATH_LEN]) {
     if (!test_can_encrypt(filename)) return;
 
@@ -244,7 +250,9 @@ void simple_xor_encryption(char filename[MAX_PATH_LEN]) {
     fclose(xor_output_stream);
 }
 
-
+// should reverse the simple_xor_encryption process, 
+// outputting its result to a new file with 
+// the .dec extension appended to the original file name
 void simple_xor_decryption(char filename[MAX_PATH_LEN]) {
     if (!test_can_encrypt(filename)) return;
 
@@ -270,6 +278,9 @@ void simple_xor_decryption(char filename[MAX_PATH_LEN]) {
 //              SUBSET 2                    //
 //                                          //
 //////////////////////////////////////////////
+// Searches a file by its name
+// If a subfile or subdirectory's name contains the provided string,
+// it should be included in the search results
 void search_by_filename(char filename[MAX_SEARCH_LENGTH]) {
     // ERROR CASES
     // if user enters an empty string
@@ -297,6 +308,7 @@ void search_by_filename(char filename[MAX_SEARCH_LENGTH]) {
     
 }
 
+// searches a file by its content
 void search_by_text(char text[MAX_SEARCH_LENGTH]) {
     printf("TODO: COMPLETE ME\n");
     exit(1);
@@ -354,8 +366,6 @@ void cyclic_block_shift_decryption(char filename[MAX_PATH_LEN], char password[CI
     exit(1);
 }
 
-
-// PROVIDED FUNCTIONS, DO NOT MODIFY
 
 // Generates a random string of length RAND_STR_LEN.
 // Requires a seed for the random number generator.
@@ -459,7 +469,6 @@ void xor_the_bytes(FILE *input_stream, FILE *output_stream) {
 
 // function to read the directory name given and then see if the files in it have 
 // the substring given
-
 char** read_given_dir_for_substring_search(char pathname[MAX_PATH_LEN], char substring_to_check[MAX_SEARCH_LENGTH], char *filenames[], int *index_ptr) {
     
     if (strstr(pathname, substring_to_check) &&
@@ -508,12 +517,14 @@ char** read_given_dir_for_substring_search(char pathname[MAX_PATH_LEN], char sub
     return filenames;
 }
 
+// prints file permissions of a file
 void print_permissions_new(char filename[MAX_PATH_LEN]) {
     struct stat s;
     stat(filename, &s);
     print_permissions(s);
 }
 
+// checks if given file is a directory
 int check_if_directory(char filename[MAX_PATH_LEN]) {
     struct stat s;
     stat(filename, &s);
@@ -523,6 +534,7 @@ int check_if_directory(char filename[MAX_PATH_LEN]) {
     return 0;
 }
 
+// checks if a file already exists in an array of files
 int check_if_file_already_exists(char filename[MAX_PATH_LEN], char* filenames[], int *index_ptr) {
     int isElementPresent = 0; 
     for (int i = 0; i < *index_ptr; i++) {
