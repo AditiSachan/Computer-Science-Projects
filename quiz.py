@@ -30,6 +30,7 @@ mydb.commit()
 
 
 #################
+# creating quiz on current affairs
 def current():
     def ans(questions):
         for i in questions:
@@ -68,6 +69,7 @@ def current():
                 flag2 = input("Do you want to quit and submit(yes/no):")
                 if flag2 == "yes":
                     break
+    # creating a submit button
     def submit():
         from tkinter import Button, Tk, Label
         def callback():
@@ -81,6 +83,7 @@ def current():
             root.mainloop()
             callback()
 
+    # plotting the results table
     def results():
         global scount
         global ccount
@@ -169,7 +172,7 @@ def current():
     a = submit()
     results()
 
-
+# creating quiz on health
 def health():
     def ans(ques):
         for i in (ques):
@@ -211,6 +214,7 @@ def health():
                 if flag2 == "yes":
                     break
 
+    # creating a submit button
     def submit():
         from tkinter import Button, Tk, Label
         def callback():
@@ -224,6 +228,7 @@ def health():
             root.mainloop()
             callback()
 
+    # plotting the results table
     def results():
         global scount
         global ccount
@@ -268,7 +273,7 @@ def health():
     c)SARS and HIV
     d)CTFV AND MERS"""
     Q3 = """How does weather seem to affect the novel coronavirus?
-    a)The virus can’t survive in hot, humid climates.
+    a)The virus can't survive in hot, humid climates.
     b)Cold temperatures can kill the virus.
     c)It is not yet known.
     d)Other"""
@@ -313,7 +318,7 @@ def health():
     submit()
     results()
 
-
+# creating quiz on entertainment
 def entertainment():
     def ans(ques):
         for i in ques:
@@ -353,7 +358,7 @@ def entertainment():
                 flag2 = input("Do you want to quit and submit(yes/no):")
                 if flag2 == "yes":
                     break
-
+    # creating a submit button
     def submit():
         from tkinter import Button, Tk, Label
         def callback():
@@ -366,6 +371,7 @@ def entertainment():
             MyButton1.grid(row=2, column=1)
             root.mainloop()
 
+    # plotting the results table
     def results():
         global scount
         global ccount
@@ -516,6 +522,8 @@ def entertainment():
 
 
 # Quiz C.S project
+# Main
+# Welcome message and choosing a topic
 score = 0
 scount = 0
 ccount = 0
