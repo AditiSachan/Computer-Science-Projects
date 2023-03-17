@@ -1,0 +1,49 @@
+{
+    "users": [
+        {
+            "uId": 1,
+            "nameFirst": "Nicole",
+            "nameLast": "Leow",
+            "email": "nicoleleow02@gmail.com",
+            "password": "9285a28437ca3cf261baa27f2f42264984236c2da4fa8bfd07972a5e190283eb",
+            "handleStr": "nicoleleow",
+            "notifications": [],
+            "tokens": [
+                "02221ca3-4f7c-4d57-8d36-059b0354385e"
+            ]
+        },
+        {
+            "uId": 2,
+            "nameFirst": "Pretty",
+            "nameLast": "Ugly",
+            "email": "Pretty.Ugly@gmail.com",
+            "password": "e1cf3c8e997454a420ceafaa9505d95ef55f0c73aeb87bc58ea1d78db15c1b27",
+            "handleStr": "prettyugly",
+            "notifications": [],
+            "tokens": [
+                "9d79ef1e-a4b8-4edd-8f86-97388440c903"
+            ]
+        }
+    ],
+    "channels": [
+        {
+            "name": "methchannel",
+            "isPublic": true,
+            "channelId": 1,
+            "ownerMembers": [
+                1
+            ],
+            "allMembers": [
+                1
+            ],
+            "messages": [],
+            "standup": [
+                {
+                    "isActive": false,
+                    "timeFinish": null
+                }
+            ]
+        }
+    ],
+    "dms": []
+}
