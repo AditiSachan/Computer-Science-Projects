@@ -3,10 +3,8 @@
 #
 #
 # !!! IMPORTANT !!!
-# Before starting work on the assignment, make sure you set your tab-width to 8!
+# make sure you set your tab-width to 8!
 # It is also suggested to indent with tabs only.
-# Instructions to configure your text editor can be found here:
-#   https://cgi.cse.unsw.edu.au/~cs1521/22T2/resources/mips-editors.html
 # !!! IMPORTANT !!!
 #
 #
@@ -20,7 +18,6 @@
 #![tabsize(8)]
 
 # Constant definitions.
-# DO NOT CHANGE THESE DEFINITIONS
 
 # MIPS doesn't have true/false by default
 true  = 1
@@ -50,7 +47,6 @@ TURN_YELLOW = 1
 
 ########################################################################
 # .DATA
-# YOU DO NOT NEED TO CHANGE THE DATA SECTION
 	.data
 
 # char board[MAX_BOARD_HEIGHT][MAX_BOARD_WIDTH];
@@ -98,8 +94,8 @@ no_space_column_str:	.asciiz "No space in that column!\n"
 #  - [X] play_turn
 #  - [X] check_winner
 #  - [X] check_line
-#  - [X] is_board_full	(provided for you)
-#  - [X] print_board	(provided for you)
+#  - [X] is_board_full	
+#  - [X] print_board	
 #
 ########################################################################
 
@@ -174,6 +170,9 @@ main__epilogue:
 
 
 ########################################################################
+# Make sure the board dimensions we're
+# given fit within the correct bounds
+#
 # .TEXT <assert_board_dimension>
 	.text
 assert_board_dimension:
@@ -253,6 +252,8 @@ assert_board_dimension__epilogue:
 
 
 ########################################################################
+# Initialise the board to all empty cells
+#
 # .TEXT <initialise_board>
 	.text
 initialise_board:
@@ -328,6 +329,7 @@ initialise_board__epilogue:
 
 
 ########################################################################
+# The main game loop
 # .TEXT <play_game>
 	.text
 play_game:
@@ -415,6 +417,13 @@ play_game__epilogue:
 
 
 ########################################################################
+# Play a single turn!
+# This in sequence:
+# - Reads in the column to insert,
+# - Makes sure it is valid,
+# - Inserts the color into that column,
+# - Switches the turn to the next player.
+#
 # .TEXT <play_turn>
 	.text
 play_turn:
@@ -561,6 +570,12 @@ play_turn__epilogue:
 
 
 ########################################################################
+# Checks if the game has a winner yet!
+# For each position on the board, the
+# loop will check vertical, horizontal,
+# North-East vertical, and
+# North-West vertical for a connection.
+#
 # .TEXT <check_winner>
 	.text
 check_winner:
@@ -714,6 +729,13 @@ check_winner__epilogue:
 	jr	$ra		# return;
 
 ########################################################################
+# Checks if a particular line represents
+# a connect 4!
+# It uses a start_row and start_col,
+# and then checks if there are 3 further
+# tokens of the same color, offsetting by
+# offset_row and offset_col each time.
+#
 # .TEXT <check_line>
 	.text
 check_line:
@@ -851,8 +873,11 @@ check_line__epilogue:
 
 
 ########################################################################
+# Checks if the board is completely full
+# i.e. there is no free space for a turn.
+# This is the condition that causes a draw
+#
 # .TEXT <is_board_full>
-# YOU DO NOT NEED TO CHANGE THE IS_BOARD_FULL FUNCTION
 	.text
 is_board_full:
 	# Args:     void
@@ -926,8 +951,11 @@ is_board_full__epilogue:
 
 
 ########################################################################
+# Print the board out to the terminal,
+# with numbers at the top to indicate
+# the column indicies.
+#
 # .TEXT <print_board>
-# YOU DO NOT NEED TO CHANGE THE PRINT_BOARD FUNCTION
 	.text
 print_board:
 	# Args:     void
