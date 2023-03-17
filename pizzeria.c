@@ -79,7 +79,9 @@ int reduce_amount_ingredient(struct pizzeria *pizzeria,
 //                         Stage 1 Functions                          //
 ////////////////////////////////////////////////////////////////////////
 
-
+// Create a new Pizzeria and 
+// return a pointer to it.
+// See the header file "pizzeria.h" for detailed documentation.
 struct pizzeria *create_pizzeria() {
 
     // Allocates memory to store a `struct pizzeria` and returns a pointer to
@@ -93,6 +95,11 @@ struct pizzeria *create_pizzeria() {
     return new;
 }
 
+// INSERT ORDER INTO PIZZERIA - Command 'o'
+//
+// Add a new Order to the Pizzeria and return an int indicating the
+// resulting status of the new Order.
+// See the header file "pizzeria.h" for detailed documentation.
 int add_order(
     struct pizzeria *pizzeria,
     char customer[MAX_STR_LENGTH],
@@ -136,6 +143,10 @@ int add_order(
     return SUCCESS;
 }
 
+// PRINT ALL ORDERS OF THE PIZZERIA - Command 'p'
+//
+// Print all orders of the Pizzeria given and return nothing.
+// See the header file "pizzeria.h" for detailed documentation.
 void print_all_orders(struct pizzeria *pizzeria) {
 
     struct order *print_current_order = pizzeria->orders;
@@ -153,6 +164,10 @@ void print_all_orders(struct pizzeria *pizzeria) {
     return;
 }
 
+// GET THE NEXT DEADLINE - Command '!'
+//
+// Return the shortest `time_allowed` among the orders.
+// See the header file "pizzeria.h" for detailed documentation.
 int next_deadline(struct pizzeria *pizzeria) {
     // if no orders
     if (pizzeria->orders == NULL) {
@@ -173,6 +188,11 @@ int next_deadline(struct pizzeria *pizzeria) {
 //                         Stage 2 Functions                          //
 ////////////////////////////////////////////////////////////////////////
 
+// SELECT THE NEXT ORDER IN THE PIZZERIA - Command '>'
+//
+// Given a Pizzeria, sets the selected order to the order after the
+// currently selected order.
+// See the header file "pizzeria.h" for detailed documentation.
 void select_next_order(struct pizzeria *pizzeria) {
 
     struct order *current_selected = pizzeria->orders;
@@ -198,6 +218,11 @@ void select_next_order(struct pizzeria *pizzeria) {
     return;
 }
 
+// SELECT THE PREVIOUS ORDER IN THE PIZZERIA - Command '<'
+//
+// Given a Pizzeria, sets the selected order to the order before the
+// currently selected order.
+// See the header file "pizzeria.h" for detailed documentation.
 void select_previous_order(struct pizzeria *pizzeria) {
 
     struct order *current_selected = pizzeria->orders;
@@ -230,6 +255,12 @@ void select_previous_order(struct pizzeria *pizzeria) {
     return;
 }
 
+// PRINT DETAILS OF THE SELECTED ORDER
+//
+// Given a Pizzeria, prints the selected order's details and its list of
+// ingredients. To print the list of ingredients, use the supplied
+// `print_ingredient` function.
+// See the header file "pizzeria.h" for detailed documentation.
 void print_selected_order(struct pizzeria *pizzeria) {
 
     if (pizzeria->selected == NULL) {
@@ -250,6 +281,11 @@ void print_selected_order(struct pizzeria *pizzeria) {
         
 }
 
+// ADD INGREDIENT TO THE SELECTED ORDER - Command 'i'
+//
+// Given a Pizzeria, adds an ingredient to the currently selected order. This
+// ingredient must be inserted in alphabetical order.
+// See the header file "pizzeria.h" for detailed documentation.
 int add_ingredient(
     struct pizzeria *pizzeria,
     char *ingredient_name,
@@ -331,6 +367,11 @@ int add_ingredient(
     return SUCCESS;
 }
 
+// CALCULATE TOTAL PROFIT TO BE MADE FROM SELECTED ORDER - Command 't'
+//
+// Given a Pizzeria, calculates how much profit is to be made from the currently
+// selected order.
+// See the header file "pizzeria.h" for detailed documentation.
 double calculate_total_profit(struct pizzeria *pizzeria) {
 
     double profit = 0;
@@ -358,7 +399,11 @@ double calculate_total_profit(struct pizzeria *pizzeria) {
 //                         Stage 3 Functions                          //
 ////////////////////////////////////////////////////////////////////////
 
-
+// CANCEL ORDER IN PIZZERIA - Command 'c'
+//
+// Cancel the currently selected order in the pizzeria.
+// Call free on the selected order, and free all associated memory
+// See the header file "pizzeria.h" for detailed documentation.
 int cancel_order(struct pizzeria *pizzeria) {
 
     if (pizzeria->selected== NULL) {
@@ -400,6 +445,10 @@ int cancel_order(struct pizzeria *pizzeria) {
     return SUCCESS;
 }
 
+// FREE THE GIVEN PIZZERIA
+//
+// Call free on the given pizzeria, and free all associated memory.
+// See the header file "pizzeria.h" for detailed documentation.
 void free_pizzeria(struct pizzeria *pizzeria) {
    
     // freeing the orders    
@@ -428,6 +477,11 @@ void free_pizzeria(struct pizzeria *pizzeria) {
     return;
 }
 
+// REFILLS THE STOCK IN THE PIZZERIA - Command 'r'
+//
+// Given an ingredient and its information, refills this in the stock of
+// the given Pizzeria
+// See the header file "pizzeria.h" for detailed documentation.
 int refill_stock(
     struct pizzeria *pizzeria,
     char ingredient_name[MAX_STR_LENGTH],
@@ -505,6 +559,10 @@ int refill_stock(
     return SUCCESS;
 }
 
+// PRINTS THE STOCK OF THE PIZZERIA  - Command 's'
+//
+// Print all ingredients of the stock in the Pizzeria given and return nothing.
+// See the header file "pizzeria.h" for detailed documentation.
 void print_stock(struct pizzeria *pizzeria) {
 
     printf("The stock contains:\n");
@@ -517,6 +575,14 @@ void print_stock(struct pizzeria *pizzeria) {
     return;
 }
 
+// DETERMINES IF AN ORDER CAN BE COMPLETED - Command '?'
+//
+// Given a Pizzeria determines if the currently selected order can be completed,
+// determined by how much stock is available.
+//
+// Orders can only be deemed completable if all the ingredients required for
+// said order exist in the Pizzeria stock including their amounts.
+// See the header file "pizzeria.h" for detailed documentation.
 int can_complete_order(struct pizzeria *pizzeria) {
 
     if (pizzeria->selected == NULL || pizzeria->selected->ingredients == NULL) {
@@ -546,6 +612,10 @@ int can_complete_order(struct pizzeria *pizzeria) {
 //                         Stage 4 Functions                          //
 ////////////////////////////////////////////////////////////////////////
 
+// ATTEMPT TO COMPLETE AN ORDER - Command '#'
+//
+// Given a Pizzeria, completes the selected order if possible.
+// See the header file "pizzeria.h" for detailed documentation.
 int complete_order(struct pizzeria *pizzeria) {
 
     int result = can_complete_order(pizzeria);
@@ -582,6 +652,11 @@ int complete_order(struct pizzeria *pizzeria) {
     return SUCCESS;
 }
 
+// SAVES ALL INGREDIENTS IN THE SELECTED ORDER TO A FILE - Command 'S'
+//
+// Given a Pizzeria, saves the ingredients of the selected order
+// to a file as a string.
+// See the header file "pizzeria.h" for detailed documentation.
 int save_ingredients(struct pizzeria *pizzeria,
                      char *file_name) {
                      
@@ -615,6 +690,12 @@ int save_ingredients(struct pizzeria *pizzeria,
     return SUCCESS;
 }
 
+// LOADS ALL INGREDIENTS FROM A FILE INTO THE SELECTED ORDER - Command 'L'
+//
+// Given a Pizzeria, loads the ingredients of a saved file `file_name` into the
+// selected order. This file will always be one that has been saved from using
+// the `save_ingredients` function.
+// See the header file "pizzeria.h" for detailed documentation.
 int load_ingredients(struct pizzeria *pizzeria, 
                      char *file_name) {
                      
@@ -647,7 +728,7 @@ int load_ingredients(struct pizzeria *pizzeria,
 }
 
 ////////////////////////////////////////////////////////////////////////
-//               HELPER FUNCTIONS - Add your own here                 //
+//               HELPER FUNCTIONS                                     //
 ////////////////////////////////////////////////////////////////////////
 
 
