@@ -1,4 +1,6 @@
 # Computer-Science-Projects
+A project coded in C focusing on filesystem objects and bitwise operations
+
 Bytelocker, a rudimentary single-file encryption tool
 Encryption is the process of converting information into an obscured format, which can (in theory), only be converted back into useful 
 information by an authorized party who knows the encryption process and key. Encryption is an incredibly useful tool,
