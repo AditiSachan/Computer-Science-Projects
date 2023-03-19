@@ -1,5 +1,5 @@
 # Computer-Science-Projects
-A project coded in MIPS assembly language
+A project coded in MIPS assembly language and C.
 
  A game of Connect Four takes place over a number of turns, as two players battle it out to connect four pieces in a line!
 Each turn, you are allowed drop a piece in an available column. Players alternate in turns until either one player makes 
