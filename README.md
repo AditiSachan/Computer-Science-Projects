@@ -231,106 +231,6 @@ Note that if you choose to use a different cloud provider, your tutor will not b
 
 You must add the URL to your deployed backend inside `deploy-url.md`.
 
-### 5.8. Marking Criteria
-
-<table>
-  <tr>
-    <th>Section</th>
-    <th>Weighting</th>
-    <th>Criteria</th>
-  </tr>
-  <tr>
-    <td>Automarking (Testing & Implementation)</td>
-    <td>55%</td>
-    <td><ul>
-      <li>Correct implementation of specified functions</li>
-      <li>Correctly written tests based on the specification requirements</li>
-      <li>Code coverage (99% coverage gives full marks for the coverage component)</li>
-      <li>Correctly linted code (worth 4% of this iteration)</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td>Code Quality</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Demonstrated an understanding of good test <b>coverage</b></li>
-      <li>Demonstrated an understanding of the importance of <b>clarity</b> in communicating the purpose of tests and code</li>
-      <li>Demonstrated an understanding of thoughtful test <b>design</b></li>
-      <li>Appropriate use of Javascript data structures (arrays, objects, etc.)</li>
-      <li>Appropriate style as described in section 8.4</li>
-      <li>Appropriate application of good software design practices</li>
-      <li>Implementation of persistent state</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Feature demonstrations</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Backend works with the supplied frontend.</li>
-      <li>Successful implementation of user/profile/uploadphoto and auth/passwordreset</li>
-      <li>Successful deployment to a cloud provider</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Git & Project Management</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Meaningful and informative git commit names being used</li>
-      <li>At least 12 merge requests into master made</li>
-      <li>A generally equal contribution between team members</li>
-      <li>Clear evidence of reflection on group's performance and state of the team</li>
-      <li>Effective use of course-provided MS Teams for communication, demonstrating an ability to competently manage teamwork online</li>
-      <li>Use of issue board on GitLab or other approved tracking mechanism to manage tasks</li>
-      <li>Effective use of agile methods such as standups</li>
-      <li>Minutes/notes taken from group meetings (and stored in a logical place in the repo)</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>Requirements & Design for future work</td>
-    <td>15%</td>
-    <td><ul>
-      <li>Requirements elicited from potential users, recorded as user stories</li>
-      <li>User journey justified and expressed as use case(s)</li>
-      <li>Interface proposed as a potential solution to provide capabilities</li>
-      <li>State diagram(s) drawn to demonstrate how application responds to actions</li>
-    </ul>
-  </td>
-  </tr>
-  <tr>
-    <td>(Bonus Marks) Extra Features</td>
-    <td>10%</td>
-    <td><ul>
-      <li>Up to 10% extra marks can be gained through additions of "extra feature(s)".</li>
-      <li>Marks will be awarded based on 1) Originality, 2) Technical or creative achievement, 3) Lack of bugs associated with it, 4) Size/scale of the addition.</li>
-      <li>Your tutor is not required to provide any assistance with this, as it's intended for more advanced students once they complete all other criteria to a high standard.</li>
-      <li>A brief explanation of your additions must be written in a file <code>extra.md</code> that is added to your repo.</li>
-      <li>Section 5.10 provides some examples of extra features you may want to implement, if you need any suggestions.</li>
-      <li>To give a rough indication of how much time should be spent on extra features, a group scoring in the top 10% should spend ~40 hours collectively on this section</li>
-    </ul>
-  </td>
-  </tr>
-</table>
-
-The formula used for automarking in this iteration is:
-
-`Mark = 95*(t * i * min(c + 1, 100)^3) + 5*e`
-(Mark equals `t` multiplied by `i` multiplied by the minimum of `c + 1` and 100 to the power of three)
-
-Where:
- * `t` is the mark you receive for your tests running against your code (100% = your implementation passes all of your tests).
- * `i` is the mark you receive for our course tests (hidden) running against your code (100% = your implementation passes all of our tests).
- * `c` is the score achieved by running coverage on your entire codebase. Note that 99% coverage is enough to give you full marks for this part.
- * `e` is the score between 0-1 achieved by running eslint against your code and the provided configuration.
-
-
-### 5.9. Submission
-
-This iteration due date described in section 7. Note there will be no demonstration for iteration 3.
-
-
 ### 5.10. Extra Features
 
 Your tutor is not required to provide any assistance with this section, as it's intended for more advanced students once they complete all other criteria to a high standard.
@@ -356,10 +256,6 @@ Here are some suggestions for extra features.
 4. **Databases** - Implementing persistence using a form of database via `typeorm`.
 
 7. **New Features** - Implement one or more of the features you have elicited in your Requirements & Design.
-
-### 5.11. Peer Assessment
-
-Reference 8.5.
 
 ## 6. Interface specifications
 
