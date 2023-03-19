@@ -2,10 +2,6 @@
 
 **✨ 🍫  UNSW Treats 🍬 ✨**
 
-## Contents
-
-[[_TOC_]]
-
 ## 0. Aims:
 
 1. Demonstrate effective use of software development tools to build full-stack end-user applications.
