@@ -1,6 +1,6 @@
 **✨ 🍫  UNSW Treats 🍬 ✨**
 
-(Backend JavaScript server)
+### (Backend JavaScript server)
 
 Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown
 1. Developed the backend for a communication platform, UNSW Treats, using Node.js and Express.
