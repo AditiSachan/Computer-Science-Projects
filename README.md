@@ -1,6 +1,6 @@
-Music Recommender System
+## Music Recommender System
 
-Python, Scikit-learn, SciPy, Surprise
+*Python, Scikit-learn, SciPy, Surprise*
 
 1. Developed a machine learning-based music recommender using content-based and collaborative filtering.
 2. Resolved cold start and personalization issues using matrix factorization (SVD).
