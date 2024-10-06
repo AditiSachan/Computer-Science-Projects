@@ -1,9 +1,9 @@
-# Computer-Science-Projects
+# -Projects
 Each branch contains a project in c, python, javascript or MIPS assembly language.
 
 ## Formula 1 Race Strategy Analysis Tool
 
-Python, Pandas, Matplotlib, Git, Jupyter Notebook
+*Python, Pandas, Matplotlib, Git, Jupyter Notebook*
 
 •	Developed a Python tool for analysing Formula 1 race strategies, with plans to expand into strategy simulation.
 
@@ -15,7 +15,7 @@ Python, Pandas, Matplotlib, Git, Jupyter Notebook
 
 ## UNSW Treats (Backend JavaScript server)
 
-Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown
+*Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown*
 
 •	Developed the backend for a communication platform, UNSW Treats, using Node.js and Express.
 
@@ -27,7 +27,7 @@ Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown
 
 ## Music Recommender System
 
-Python, Scikit-learn, SciPy, Surprise
+*Python, Scikit-learn, SciPy, Surprise*
 
 •	Developed a machine learning-based music recommender using content-based and collaborative filtering.
 
