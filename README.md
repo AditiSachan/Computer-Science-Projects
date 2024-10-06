@@ -3,10 +3,10 @@
 **✨ 🍫  UNSW Treats 🍬 ✨**
 (Backend JavaScript server)
 Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown
-•	Developed the backend for a communication platform, UNSW Treats, using Node.js and Express.
-•	Implemented key features including user authentication, messaging, and channel management using TypeScript.
-•	Utilized RESTful APIs to handle client-server communication and deployed the backend to a cloud infrastructure.
-•	Managed sessions and tokens for secure authentication, implementing end-to-end encryption using the WebCrypto API, ensuring compliance with industry-standard security practices.
+1. Developed the backend for a communication platform, UNSW Treats, using Node.js and Express.
+2. Implemented key features including user authentication, messaging, and channel management using TypeScript.
+3. Utilized RESTful APIs to handle client-server communication and deployed the backend to a cloud infrastructure.
+4. Managed sessions and tokens for secure authentication, implementing end-to-end encryption using the WebCrypto API, ensuring compliance with industry-standard security practices.
 
 ## 0. Aims:
 
