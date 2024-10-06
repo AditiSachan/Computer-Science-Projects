@@ -2,7 +2,8 @@
 
 ### (Backend JavaScript server)
 
-Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown
+*Node.js, Express.js, JavaScript, Jest, HTTP/REST APIs, npm, Markdown*
+
 1. Developed the backend for a communication platform, UNSW Treats, using Node.js and Express.
 2. Implemented key features including user authentication, messaging, and channel management using TypeScript.
 3. Utilized RESTful APIs to handle client-server communication and deployed the backend to a cloud infrastructure.
